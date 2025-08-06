@@ -3,233 +3,183 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Saifali Sayyed - Cloud Operations Engineer Portfolio</title>
+  <title>Saifali Sayyed | Cloud Operations Engineer</title>
   <style>
-    /* Reset & base */
+    /* Reset */
     * {
       margin: 0; padding: 0; box-sizing: border-box;
     }
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f5f7fa;
-      color: #222;
+      background-color: #0a192f;
+      color: #ccd6f6;
       line-height: 1.6;
-      min-height: 100vh;
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 20px;
+      min-height: 100vh;
     }
     a {
-      color: #007acc;
+      color: #64ffda;
       text-decoration: none;
     }
     a:hover {
       text-decoration: underline;
     }
-
-    /* Container */
-    .container {
-      max-width: 900px;
-      width: 100%;
-      background: #fff;
-      padding: 30px 40px;
-      border-radius: 10px;
-      box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+    /* Sidebar */
+    .sidebar {
+      background-color: #112240;
+      width: 280px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-right: 1px solid #233554;
     }
-
-    header {
-      text-align: center;
-      margin-bottom: 40px;
+    .sidebar img {
+      width: 150px;
+      border-radius: 50%;
+      margin-bottom: 1.5rem;
+      border: 2px solid #64ffda;
     }
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 5px;
-      color: #007acc;
-    }
-    header p {
-      font-size: 1.25rem;
-      color: #555;
-    }
-    header a {
-      display: inline-block;
-      margin-top: 10px;
-      font-weight: 600;
-      font-size: 1.1rem;
-    }
-
-    /* Sections */
-    section {
-      margin-bottom: 40px;
-    }
-    section h2 {
-      border-left: 6px solid #007acc;
-      padding-left: 12px;
-      margin-bottom: 20px;
+    .sidebar h1 {
       font-size: 1.8rem;
-      color: #007acc;
-    }
-
-    /* Summary */
-    #summary p {
-      font-size: 1.1rem;
-      color: #333;
-      white-space: pre-wrap;
-    }
-
-    /* Experience */
-    .job {
-      margin-bottom: 30px;
-    }
-    .job h3 {
-      font-size: 1.3rem;
-      color: #004a80;
-      margin-bottom: 6px;
-    }
-    .job span {
-      font-style: italic;
-      color: #666;
-      font-size: 0.9rem;
-    }
-    .job ul {
-      margin-top: 10px;
-      padding-left: 20px;
-      list-style: disc;
-      color: #444;
-    }
-    .job ul li {
-      margin-bottom: 8px;
-    }
-
-    /* Education & Skills */
-    #education ul,
-    #skills ul,
-    #certifications ul {
-      list-style: none;
-      padding-left: 0;
-      color: #444;
-    }
-    #education li,
-    #certifications li {
-      margin-bottom: 10px;
-      font-weight: 600;
-      font-size: 1.05rem;
-    }
-    #skills li {
-      background: #e1f0ff;
-      display: inline-block;
-      margin: 6px 8px 6px 0;
-      padding: 6px 14px;
-      border-radius: 20px;
-      font-weight: 600;
-      color: #007acc;
-      font-size: 0.95rem;
-    }
-
-    /* Contact */
-    #contact p {
-      font-size: 1.1rem;
-      margin-bottom: 6px;
-    }
-    #contact a {
-      font-weight: 600;
-      color: #007acc;
-    }
-
-    /* Footer */
-    footer {
-      margin-top: auto;
-      padding: 20px 0 10px 0;
-      font-size: 0.9rem;
-      color: #888;
+      color: #64ffda;
+      margin-bottom: 0.5rem;
       text-align: center;
     }
-
+    .sidebar p {
+      color: #8892b0;
+      font-size: 1rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      line-height: 1.4;
+    }
+    .sidebar .contact a {
+      display: block;
+      margin-bottom: 0.8rem;
+      font-weight: 600;
+      font-size: 1rem;
+      word-break: break-word;
+    }
+    /* Main content */
+    main {
+      flex-grow: 1;
+      padding: 3rem 4rem;
+      max-width: 900px;
+      overflow-y: auto;
+    }
+    main h2 {
+      color: #64ffda;
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+      border-bottom: 2px solid #64ffda;
+      padding-bottom: 0.3rem;
+    }
+    section {
+      margin-bottom: 3rem;
+    }
+    p {
+      color: #8892b0;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    ul li {
+      margin-bottom: 0.7rem;
+      padding-left: 1.2rem;
+      position: relative;
+      color: #8892b0;
+    }
+    ul li::before {
+      content: '▹';
+      position: absolute;
+      left: 0;
+      color: #64ffda;
+    }
     /* Responsive */
-    @media (max-width: 600px) {
-      .container {
-        padding: 20px;
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
       }
-      header h1 {
-        font-size: 2.2rem;
+      .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #233554;
+        padding: 2rem 1.5rem;
+        flex-direction: row;
+        justify-content: center;
       }
-      section h2 {
-        font-size: 1.5rem;
+      .sidebar img {
+        margin-right: 1.5rem;
+        margin-bottom: 0;
+        width: 100px;
+      }
+      .sidebar h1 {
+        margin-bottom: 0;
+        align-self: center;
+      }
+      main {
+        padding: 2rem 1.5rem;
       }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <header>
+  <aside class="sidebar">
+    <img src="https://avatars.githubusercontent.com/u/16563198?v=4" alt="Saifali Sayyed" />
+    <div>
       <h1>Saifali Sayyed</h1>
       <p>Senior Cloud Operations Engineer</p>
+      <div class="contact">
+        <a href="https://www.linkedin.com/in/saifali-sayyed-9abb36151/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/your-github-username" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </div>
+  </aside>
+  <main>
+    <section id="about">
+      <h2>About Me</h2>
       <p>
-        <a href="https://www.linkedin.com/in/saifali-sayyed-9abb36151/" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
-      </p>
-    </header>
-
-    <section id="summary">
-      <h2>Summary</h2>
-      <p>
-Senior Cloud Operations Engineer with 5+ years of hands-on experience designing, automating, and managing scalable AWS infrastructures. Specialized in CI/CD pipeline creation, Python scripting, and proactive monitoring to ensure 99.9% uptime and rapid incident resolution. Proven track record in optimizing deployments, reducing manual effort by 60%, and leading Sev1 incident analysis with cross‑functional teams.
+        Senior Cloud Operations Engineer with 5+ years of experience designing, automating, and managing scalable AWS infrastructures. Specialized in CI/CD pipeline creation, Python scripting, and proactive monitoring to ensure 99.9% uptime and rapid incident resolution.
       </p>
     </section>
 
     <section id="experience">
       <h2>Experience</h2>
-
-      <div class="job">
-        <h3>Senior Cloud Operations Engineer | Guidewire Software | Dublin</h3>
-        <span>Nov 2023 – Present</span>
-        <ul>
-          <li>Architected and automated AWS infrastructure for 5+ high‑availability production environments using CloudFormation, resulting in 40% faster provisioning.</li>
-          <li>Developed Python (boto3) scripts integrated with Jenkins to automate routine maintenance tasks, cutting manual intervention by 60%.</li>
-          <li>Implemented comprehensive monitoring dashboards in DataDog and Zabbix, reducing incident detection time by 50%.</li>
-          <li>Led triage and root‑cause analysis for Sev1 incidents, collaborating directly with clients to restore services within SLA targets.</li>
-        </ul>
-      </div>
-
-      <div class="job">
-        <h3>Cloud Operations Engineer | Guidewire Software | Dublin</h3>
-        <span>Nov 2020 – Oct 2023</span>
-        <ul>
-          <li>Designed and maintained CI/CD pipelines in Jenkins with multi‑stage approvals, deploying applications to QA, STAGE, and PROD.</li>
-          <li>Automated IAM role management and patching in AWS Systems Manager, achieving consistent compliance across 200+ EC2 instances.</li>
-          <li>Provisioned, configured, and automated AWS resources (VPC, EC2, S3, IAM, Lambda) using CloudFormation and AWS CLI to ensure secure, scalable environments.</li>
-          <li>Participated in on‑call rotations for Sev1 incidents, collaborating with clients to conduct rapid triage, root‑cause analysis, and implement remediation plans.</li>
-          <li>Executed in‑depth diagnostics on Java/Tomcat environments—utilizing log aggregation, heap and thread dump analysis—to identify and resolve performance issues.</li>
-        </ul>
-      </div>
-
-      <div class="job">
-        <h3>AWS SysOps & Operations Engineer (Part-Time) | TerraAlto Limited | Dublin</h3>
-        <span>Dec 2019 – Jun 2020</span>
-        <ul>
-          <li>Created standard operating procedures and technical runbooks in Confluence for managed services, enhancing team onboarding speed by 30%.</li>
-          <li>Automated Linux patch management using AWS Systems Manager and shell scripts, ensuring 100% patch compliance.</li>
-          <li>Managed IAM Roles attached to Active Directory.</li>
-          <li>Created shell scripts for Linux environments.</li>
-        </ul>
-      </div>
-
-      <div class="job">
-        <h3>DevOps Engineer | Kumolus India Pvt Ltd | India</h3>
-        <span>Dec 2017 – Aug 2019</span>
-        <ul>
-          <li>Managed full lifecycle of AWS‑based product environments, including automated AMI creation via CloudFormation.</li>
-          <li>Built Jenkins Groovy pipelines to deploy code from GitHub to target servers using AWS CodeDeploy, achieving zero‑downtime releases.</li>
-          <li>Implemented Docker containerization and clustering (Swarm), reducing application deployment time by 70%.</li>
-          <li>Deployed and configured NGINX, SAMBA, Mail Server, and MongoDB Replica Sets; wrote automation scripts triggered by AWS Lambda.</li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="education">
-      <h2>Education</h2>
       <ul>
-        <li>MSc in Cloud Computing, National College of Ireland, Dublin (Sep 2019 – Nov 2020)</li>
-        <li>B.E in Computer Science, Pune University, India (May 2014 – Jun 2017)</li>
+        <li><strong>Senior Cloud Operations Engineer</strong> – Guidewire Software, Dublin (Nov 2023 – Present)
+          <ul>
+            <li>Architected and automated AWS infrastructure for 5+ high‑availability production environments using CloudFormation, resulting in 40% faster provisioning.</li>
+            <li>Developed Python (boto3) scripts integrated with Jenkins to automate routine maintenance tasks, cutting manual intervention by 60%.</li>
+            <li>Implemented monitoring dashboards in DataDog and Zabbix, reducing incident detection time by 50%.</li>
+            <li>Led triage and root‑cause analysis for Sev1 incidents, collaborating directly with clients to restore services within SLA targets.</li>
+          </ul>
+        </li>
+        <li><strong>Cloud Operations Engineer</strong> – Guidewire Software, Dublin (Nov 2020 – Oct 2023)
+          <ul>
+            <li>Designed and maintained CI/CD pipelines in Jenkins with multi‑stage approvals.</li>
+            <li>Automated IAM role management and patching in AWS Systems Manager, ensuring compliance across 200+ EC2 instances.</li>
+            <li>Provisioned and automated AWS resources using CloudFormation and AWS CLI.</li>
+            <li>On-call rotations for Sev1 incidents with rapid triage and remediation.</li>
+            <li>Diagnosed Java/Tomcat performance issues with log aggregation and thread dump analysis.</li>
+          </ul>
+        </li>
+        <li><strong>AWS SysOps & Operations Engineer (Part-Time)</strong> – TerraAlto Limited, Dublin (Dec 2019 – Jun 2020)
+          <ul>
+            <li>Created SOPs and technical runbooks in Confluence, improving onboarding speed by 30%.</li>
+            <li>Automated Linux patch management via AWS Systems Manager.</li>
+          </ul>
+        </li>
+        <li><strong>DevOps Engineer</strong> – Kumolus India Pvt Ltd, India (Dec 2017 – Aug 2019)
+          <ul>
+            <li>Managed AWS product environments with automated AMI creation.</li>
+            <li>Built Jenkins Groovy pipelines for zero-downtime releases.</li>
+            <li>Implemented Docker containerization and clustering.</li>
+            <li>Deployed NGINX, SAMBA, Mail Server, and MongoDB Replica Sets with automation.</li>
+          </ul>
+        </li>
       </ul>
     </section>
 
@@ -254,13 +204,10 @@ Senior Cloud Operations Engineer with 5+ years of hands-on experience designing,
     </section>
 
     <section id="contact">
-      <h2>Contact Me</h2>
+      <h2>Contact</h2>
       <p>LinkedIn: <a href="https://www.linkedin.com/in/saifali-sayyed-9abb36151/" target="_blank" rel="noopener noreferrer">linkedin.com/in/saifali-sayyed-9abb36151</a></p>
+      <p>GitHub: <a href="https://github.com/your-github-username" target="_blank" rel="noopener noreferrer">github.com/your-github-username</a></p>
     </section>
-  </div>
-
-  <footer>
-    &copy; 2025 Saifali Sayyed — Built with HTML & CSS
-  </footer>
+  </main>
 </body>
 </html>
